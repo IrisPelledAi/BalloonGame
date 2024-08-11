@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק הבלונים</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        הדפדפן שלך אינו תומך בתג האודיו.
+    </audio>
+    <div id="start-screen" class="start-screen">
+        <h2>ברוך הבא למשחק הבלונים!</h2>
+        <label for="player-name">אנא הכנס את שמך:</label>
+        <input type="text" id="player-name" name="player-name" required>
+        <button onclick="startGame()">התחל משחק</button>
+    </div>
+    <div id="game-container" class="game-container" style="display:none;">
+        <div class="score-board">נקודות: <span id="score">0</span></div>
+        <div class="timer">זמן: <span id="timer">0</span> שניות</div>
+        <div id="instructions"></div>
+        <div id="balloons-container"></div>
+        <button id="next-level" onclick="nextLevel()" style="display:none;">עבור לשלב הבא</button>
+        <div id="game-over" style="display:none;">
+            <img src="trophy.png" alt="גביע ניצחון" class="trophy-image">
+            <p id="congrats-message">כל הכבוד!</p>
+            <p>צברת <span id="final-score"></span> נקודות</p>
+            <p>הזמן שלך: <span id="final-time"></span> שניות</p>
+            <button onclick="restartGame()">התחל מחדש</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
